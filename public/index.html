@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Socket.IO Chat Example</title>
+  <link rel="shortcut icon" href="#" /> 
+ <link href="public/style.css">
+  <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:;style-src 'self' 'unsafe-inline'; default-src 'self'; script-src 'self' code.jquery.com 'unsafe-inline'">
+</head>
+<body>
+  <ul class="pages">
+    <li class="chat page">
+      <div class="chatArea">
+        <ul class="messages"></ul>
+      </div>
+      <input class="inputMessage" placeholder="Type here..."/>
+	  <div style="visibility: hidden;">
+		<input type="button" id="btnFilterSessions1" value="ok" />
+	  </div>
+    </li>
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">What's your nickname?</h3>
+        <input class="usernameInput" type="text" maxlength="14" />
+		<span style="display: none;">
+		<input type="button" id="btnFilterSessions" value="ok" />
+		</span>
+      </div>
+    </li>
+  </ul>
+
+	<script>
+	$(document).on('vclick', '#btnFilterSessions', function(){ 
+		console.log("click");
+	});
+	
+	$(document).on('vclick', '#btnFilterSessions1', function(){ 
+		console.log("click1");
+	});
+	</script>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
